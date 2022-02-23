@@ -25,7 +25,21 @@ Core/Src/stm32f4xx_hal_msp.o: ../Core/Src/stm32f4xx_hal_msp.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/FreeRTOS.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/FreeRTOSConfig.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/SEGGER/SEGGER.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/Config/Global.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/Config/SEGGER_SYSVIEW_Conf.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/Config/SEGGER_RTT_Conf.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/projdefs.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/portable.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/deprecated_definitions.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/portmacro.h \
+ F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/mpu_wrappers.h
 
 ../Core/Inc/main.h:
 
@@ -82,3 +96,31 @@ Core/Src/stm32f4xx_hal_msp.o: ../Core/Src/stm32f4xx_hal_msp.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/FreeRTOS.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/FreeRTOSConfig.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/SEGGER/SEGGER.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/Config/Global.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/Config/SEGGER_SYSVIEW_Conf.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/SEGGER/Config/SEGGER_RTT_Conf.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/projdefs.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/portable.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/deprecated_definitions.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/portmacro.h:
+
+F:/Ni3/RTOS_STM32F4/002LED_tasks/ThirdParty/FreeRTOS/include/mpu_wrappers.h:

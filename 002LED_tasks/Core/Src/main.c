@@ -52,8 +52,9 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-static void task1_function(void* parameters);
-static void task2_function(void* parameters);
+static void LED1_function(void* parameters);
+static void LED2_function(void* parameters);
+static void LED3_function(void* parameters);
 
 extern  void SEGGER_UART_init(uint32_t);
 /* USER CODE END PFP */
@@ -70,8 +71,9 @@ extern  void SEGGER_UART_init(uint32_t);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	TaskHandle_t Task1_handle;
-	TaskHandle_t Task2_handle;
+	TaskHandle_t LED1_handle;
+	TaskHandle_t LED2_handle;
+	TaskHandle_t LED3_handle;
 	BaseType_t status;
   /* USER CODE END 1 */
 
@@ -97,15 +99,19 @@ int main(void)
 
   //Enable the Cycle counter
   	  DWT_CTRL |= (1<<0);
-  	  SEGGER_UART_init(500000);
-  	  SEGGER_SYSVIEW_Conf();
+  	 SEGGER_UART_init(500000);
+  	 SEGGER_SYSVIEW_Conf();
   	  //SEGGER_SYSVIEW_Start();
-  	  status = xTaskCreate(task1_function,"TASK-1",200,"Hello world from Task 1",2, &Task1_handle);
+
+  	  status = xTaskCreate(LED1_function,"GREEN LED",200,NULL,2, &LED1_handle);
   	  configASSERT(status == pdPASS);
 
-
-  	  status = xTaskCreate(task2_function,"TASK-2",200,"Hello world from Task 2",2, &Task2_handle);
+  	  status = xTaskCreate(LED2_function,"RED LED",200,NULL,2, &LED2_handle);
   	  configASSERT(status == pdPASS);
+
+  	  status = xTaskCreate(LED3_function,"ORANGE LED",200,NULL,2, &LED3_handle);
+  	  configASSERT(status == pdPASS);
+
 
 
   	  vTaskStartScheduler();
@@ -305,25 +311,39 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-static void task1_function(void* parameters)
+static void LED1_function(void* parameters)
 {
-	char msg[100];
+
 	while(1)
 		{
-		snprintf(msg,100,"%s\n",(char*) parameters);
-		SEGGER_SYSVIEW_PrintfTarget(msg);
+		//SEGGER_SYSVIEW_PrintfTarget("Toggling Green LED");
+		HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+		HAL_Delay(1000);
 			taskYIELD();
 		}
 
 }
-static void task2_function(void* parameters)
+static void LED2_function(void* parameters)
 {
-	char msg[100];
+
 	while(1)
 		{
-			//printf("%s\n",(char*) parameters);
-			snprintf(msg,100,"%s\n",(char*) parameters);
-			SEGGER_SYSVIEW_PrintfTarget(msg);
+		//SEGGER_SYSVIEW_PrintfTarget("Toggling RED LED");
+		HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+		HAL_Delay(800);
+			taskYIELD();
+		}
+
+}
+static void LED3_function(void* parameters)
+{
+
+	while(1)
+		{
+		//SEGGER_SYSVIEW_PrintfTarget("Toggling ORANGE LED");
+			HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+			HAL_Delay(400);
+
 			taskYIELD();
 		}
 
