@@ -316,9 +316,10 @@ static void LED1_function(void* parameters)
 
 	while(1)
 		{
-		//SEGGER_SYSVIEW_PrintfTarget("Toggling Green LED");
-		HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
-		HAL_Delay(1000);
+			SEGGER_SYSVIEW_PrintfTarget("Toggling Green LED");
+			HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+			// Blocking Delay
+			HAL_Delay(1000);
 			taskYIELD();
 		}
 
@@ -328,9 +329,10 @@ static void LED2_function(void* parameters)
 
 	while(1)
 		{
-		//SEGGER_SYSVIEW_PrintfTarget("Toggling RED LED");
-		HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
-		HAL_Delay(800);
+			SEGGER_SYSVIEW_PrintfTarget("Toggling RED LED");
+			HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+			// Blocking Delay
+			HAL_Delay(800);
 			taskYIELD();
 		}
 
@@ -340,8 +342,9 @@ static void LED3_function(void* parameters)
 
 	while(1)
 		{
-		//SEGGER_SYSVIEW_PrintfTarget("Toggling ORANGE LED");
+			SEGGER_SYSVIEW_PrintfTarget("Toggling ORANGE LED");
 			HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+			// Blocking Delay
 			HAL_Delay(400);
 
 			taskYIELD();
