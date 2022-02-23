@@ -11,6 +11,7 @@ RM := rm -rf
 -include sources.mk
 -include ThirdParty/SEGGER/SEGGER/Syscalls/subdir.mk
 -include ThirdParty/SEGGER/SEGGER/subdir.mk
+-include ThirdParty/SEGGER/Rec/subdir.mk
 -include ThirdParty/SEGGER/OS/subdir.mk
 -include ThirdParty/SEGGER/Config/subdir.mk
 -include ThirdParty/FreeRTOS/portable/MemMang/subdir.mk
@@ -67,8 +68,8 @@ all: main-build
 main-build: 001tasks.elf secondary-outputs
 
 # Tool invocations
-001tasks.elf: $(OBJS) $(USER_OBJS) F:\DOES\FreeRTOS_Workspace\001tasks\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "001tasks.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\DOES\FreeRTOS_Workspace\001tasks\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001tasks.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+001tasks.elf: $(OBJS) $(USER_OBJS) F:\Ni3\RTOS_STM32F4\001tasks\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "001tasks.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\Ni3\RTOS_STM32F4\001tasks\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001tasks.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
