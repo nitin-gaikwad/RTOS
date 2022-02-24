@@ -63,10 +63,12 @@ extern const SEGGER_SYSVIEW_OS_API SYSVIEW_X_OS_TraceAPI;
 **********************************************************************
 */
 // The application name to be displayed in SystemViewer
-#define SYSVIEW_APP_NAME        "FreeRTOS Hello world Application"
+#define SYSVIEW_APP_NAME        "FreeRTOS Continuous data acquisition "
 
 // The target device name
 #define SYSVIEW_DEVICE_NAME     "STM32F407-DISC-1"
+
+#define SYSVIEW_DEVICE_CORE     "ARM_CORTEX-M4"
 
 // Frequency of the timestamp. Must match SEGGER_SYSVIEW_GET_TIMESTAMP in SEGGER_SYSVIEW_Conf.h
 #define SYSVIEW_TIMESTAMP_FREQ  (configCPU_CLOCK_HZ)
@@ -85,7 +87,7 @@ extern const SEGGER_SYSVIEW_OS_API SYSVIEW_X_OS_TraceAPI;
 *    Sends SystemView description strings.
 */
 static void _cbSendSystemDesc(void) {
-  SEGGER_SYSVIEW_SendSysDesc("N="SYSVIEW_APP_NAME",D="SYSVIEW_DEVICE_NAME",O=FreeRTOS");
+  SEGGER_SYSVIEW_SendSysDesc("N="SYSVIEW_APP_NAME",D="SYSVIEW_DEVICE_NAME" ,C="SYSVIEW_DEVICE_CORE",O=FreeRTOS");
   SEGGER_SYSVIEW_SendSysDesc("I#15=SysTick");
 }
 

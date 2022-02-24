@@ -55,7 +55,7 @@ static void MX_GPIO_Init(void);
 static void task1_function(void* parameters);
 static void task2_function(void* parameters);
 
-extern  void SEGGER_UART_init(uint32_t);
+extern  void SEGGER_UART_init(U32 baud);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -97,9 +97,13 @@ int main(void)
 
   //Enable the Cycle counter
   	  DWT_CTRL |= (1<<0);
+
   	  SEGGER_UART_init(500000);
+
   	  SEGGER_SYSVIEW_Conf();
+
   	  //SEGGER_SYSVIEW_Start();
+
   	  status = xTaskCreate(task1_function,"TASK-1",200,"Hello world from Task 1",2, &Task1_handle);
   	  configASSERT(status == pdPASS);
 
